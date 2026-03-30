@@ -1,5 +1,5 @@
 /**
- * サロンドヴァンパッシオン 特別試飲会（青山ブルゴーニュ.shop経由）
+ * サロンドヴァンパッシオン試飲会（青山ブルゴーニュ.shop経由）
  * Google Apps Script — スプレッドシート記録 + 自動返信メール
  */
 
@@ -33,7 +33,7 @@ function handleSubmission(raw) {
     var sheet = ss.getSheetByName('試飲会申込_回答') || ss.getSheets()[0];
 
     sheet.appendRow([
-      new Date(),
+      Utilities.formatDate(new Date(), "Asia/Tokyo", "yyyy/MM/dd HH:mm:ss"),
       data.memberId,
       data.name,
       data.furigana,
