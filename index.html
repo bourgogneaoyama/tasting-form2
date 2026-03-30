@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>サロンドヴァンパッシオン 特別試飲会 お申し込み</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+    }
+
+    body {
+      background-color: #F5F0EB;
+      color: #2d1a1a;
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 300;
+      line-height: 1.9;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    /* ── Header ── */
+    header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    header .brand {
+      font-family: 'EB Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      color: #7a2a30;
+      margin-bottom: 12px;
+    }
+
+    header h1 {
+      font-weight: 400;
+      font-size: 1.35rem;
+      letter-spacing: 0.08em;
+      line-height: 1.7;
+      color: #2d1a1a;
+    }
+
+    header h1 span {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 300;
+      margin-top: 4px;
+    }
+
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: #c4a090;
+      margin: 32px auto;
+    }
+
+    /* ── Notice ── */
+    .notice {
+      background: #faf6f2;
+      border-left: 2px solid #c4a090;
+      padding: 20px 24px;
+      margin-bottom: 48px;
+      font-size: 0.82rem;
+      color: #9a7a6a;
+      line-height: 2;
+    }
+
+    .notice strong {
+      display: block;
+      color: #7a2a30;
+      font-weight: 500;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    /* ── Form ── */
+    .form-group {
+      margin-bottom: 36px;
+    }
+
+    label.field-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: #7a2a30;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+    }
+
+    label.field-label .required {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 400;
+      color: #fff;
+      background: #7a2a30;
+      padding: 1px 6px;
+      border-radius: 2px;
+      margin-left: 8px;
+      vertical-align: middle;
+      letter-spacing: 0.04em;
+    }
+
+    label.field-label .optional {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 400;
+      color: #9a7a6a;
+      border: 1px solid #c4a090;
+      padding: 1px 6px;
+      border-radius: 2px;
+      margin-left: 8px;
+      vertical-align: middle;
+      letter-spacing: 0.04em;
+    }
+
+    /* Text inputs */
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #c4a090;
+      background: transparent;
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 300;
+      font-size: 0.95rem;
+      color: #2d1a1a;
+      padding: 8px 0;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus {
+      border-bottom-color: #7a2a30;
+    }
+
+    input[type="text"]::placeholder,
+    input[type="email"]::placeholder {
+      color: #c4a090;
+      font-weight: 300;
+    }
+
+    .field-hint {
+      font-size: 0.72rem;
+      color: #9a7a6a;
+      margin-top: 6px;
+    }
+
+    /* Select */
+    .select-wrap {
+      position: relative;
+      display: inline-block;
+      width: 160px;
+    }
+
+    .select-wrap select {
+      width: 100%;
+      appearance: none;
+      -webkit-appearance: none;
+      border: none;
+      border-bottom: 1px solid #c4a090;
+      background: transparent;
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 300;
+      font-size: 0.95rem;
+      color: #2d1a1a;
+      padding: 8px 28px 8px 0;
+      outline: none;
+      cursor: pointer;
+      transition: border-color 0.3s;
+    }
+
+    .select-wrap select:focus {
+      border-bottom-color: #7a2a30;
+    }
+
+    .select-wrap::after {
+      content: '';
+      position: absolute;
+      right: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      border-right: 1px solid #9a7a6a;
+      border-bottom: 1px solid #9a7a6a;
+      transform: translateY(-60%) rotate(45deg);
+      pointer-events: none;
+    }
+
+    /* Custom radio */
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .radio-item {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 300;
+    }
+
+    .radio-item input[type="radio"] {
+      display: none;
+    }
+
+    .radio-item .radio-circle {
+      width: 18px;
+      height: 18px;
+      border: 1px solid #c4a090;
+      border-radius: 50%;
+      margin-right: 10px;
+      flex-shrink: 0;
+      position: relative;
+      transition: border-color 0.3s;
+    }
+
+    .radio-item input[type="radio"]:checked + .radio-circle {
+      border-color: #7a2a30;
+    }
+
+    .radio-item input[type="radio"]:checked + .radio-circle::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #7a2a30;
+    }
+
+    .radio-item:hover .radio-circle {
+      border-color: #7a2a30;
+    }
+
+    /* Custom checkbox */
+    .checkbox-item {
+      display: flex;
+      align-items: flex-start;
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 300;
+      line-height: 1.9;
+    }
+
+    .checkbox-item input[type="checkbox"] {
+      display: none;
+    }
+
+    .checkbox-item .checkbox-box {
+      width: 18px;
+      height: 18px;
+      border: 1px solid #c4a090;
+      border-radius: 2px;
+      margin-right: 10px;
+      margin-top: 5px;
+      flex-shrink: 0;
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    .checkbox-item input[type="checkbox"]:checked + .checkbox-box {
+      background: #7a2a30;
+      border-color: #7a2a30;
+    }
+
+    .checkbox-item input[type="checkbox"]:checked + .checkbox-box::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 5px;
+      width: 5px;
+      height: 9px;
+      border: solid #fff;
+      border-width: 0 1.5px 1.5px 0;
+      transform: rotate(45deg);
+    }
+
+    .checkbox-item:hover .checkbox-box {
+      border-color: #7a2a30;
+    }
+
+    /* Divider line */
+    .section-divider {
+      border: none;
+      border-top: 1px solid #e8e0d8;
+      margin: 40px 0;
+    }
+
+    /* Submit button */
+    .submit-wrap {
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .submit-btn {
+      display: inline-block;
+      background: transparent;
+      color: #7a2a30;
+      border: 1px solid #7a2a30;
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 400;
+      font-size: 0.88rem;
+      letter-spacing: 0.12em;
+      padding: 14px 56px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .submit-btn:hover {
+      background: #7a2a30;
+      color: #F5F0EB;
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Validation error */
+    .field-error {
+      color: #7a2a30;
+      font-size: 0.72rem;
+      margin-top: 6px;
+      display: none;
+    }
+
+    .form-group.has-error .field-error {
+      display: block;
+    }
+
+    .form-group.has-error input[type="text"],
+    .form-group.has-error input[type="email"] {
+      border-bottom-color: #7a2a30;
+    }
+
+    /* Completion message */
+    .completion {
+      display: none;
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    .completion h2 {
+      font-weight: 400;
+      font-size: 1.15rem;
+      letter-spacing: 0.06em;
+      margin-bottom: 24px;
+    }
+
+    .completion p {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: #9a7a6a;
+      line-height: 2;
+    }
+
+    /* Loading overlay */
+    .loading-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(245, 240, 235, 0.85);
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .loading-overlay.active {
+      display: flex;
+    }
+
+    .spinner {
+      width: 32px;
+      height: 32px;
+      border: 2px solid #e8e0d8;
+      border-top-color: #7a2a30;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .container {
+        padding: 40px 18px 60px;
+      }
+      header h1 {
+        font-size: 1.15rem;
+      }
+      .submit-btn {
+        width: 100%;
+        padding: 14px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="spinner"></div>
+  </div>
+
+  <div class="container">
+    <header>
+      <p class="brand">aoyama-bourgogne.shop</p>
+      <h1>
+        特別試飲会
+        <span>お申し込みフォーム</span>
+      </h1>
+    </header>
+
+    <div class="divider"></div>
+
+    <div class="notice">
+      <strong>&#9660; ご注意</strong>
+      本フォームの送信はお申し込みの完了ではございません。<br>
+      2〜3日以内に担当者より公式LINEにて決済リンクをお送りします。<br>
+      決済完了をもってご予約確定となります。<br>
+      定員に達した場合はお申し込みいただけない場合がございます。
+    </div>
+
+    <!-- Form -->
+    <form id="applicationForm" novalidate>
+
+      <!-- ① 会員番号 -->
+      <div class="form-group" id="groupMemberId">
+        <label class="field-label" for="memberId">
+          会員番号 <span class="required">必須</span>
+        </label>
+        <input type="text" id="memberId" name="memberId" placeholder="例：M00000000" required>
+        <p class="field-hint">LINEの会員証からご確認いただけます</p>
+        <p class="field-error">正しい会員番号をご入力ください（例：M00000000）</p>
+      </div>
+
+      <!-- ② お名前 -->
+      <div class="form-group" id="groupName">
+        <label class="field-label" for="name">
+          お名前 <span class="required">必須</span>
+        </label>
+        <input type="text" id="name" name="name" placeholder="例：山田 太郎" required>
+        <p class="field-error">お名前をご入力ください</p>
+      </div>
+
+      <!-- ③ フリガナ -->
+      <div class="form-group" id="groupFurigana">
+        <label class="field-label" for="furigana">
+          お名前（フリガナ） <span class="required">必須</span>
+        </label>
+        <input type="text" id="furigana" name="furigana" placeholder="例：ヤマダ タロウ" required>
+        <p class="field-error">フリガナをご入力ください</p>
+      </div>
+
+      <!-- ④ メールアドレス -->
+      <div class="form-group" id="groupEmail">
+        <label class="field-label" for="email">
+          メールアドレス <span class="required">必須</span>
+        </label>
+        <input type="email" id="email" name="email" placeholder="例：example@email.com" required>
+        <p class="field-error">正しいメールアドレスをご入力ください</p>
+      </div>
+
+      <!-- ⑤ 参加人数 -->
+      <div class="form-group" id="groupGuests">
+        <label class="field-label" for="guests">
+          参加人数（同伴者含む） <span class="required">必須</span>
+        </label>
+        <div class="select-wrap">
+          <select id="guests" name="guests" required>
+            <option value="" disabled selected>選択してください</option>
+            <option value="1名">1名</option>
+            <option value="2名">2名</option>
+            <option value="3名">3名</option>
+            <option value="4名">4名</option>
+            <option value="5名">5名</option>
+            <option value="6名">6名</option>
+          </select>
+        </div>
+        <p class="field-error">参加人数を選択してください</p>
+      </div>
+
+      <hr class="section-divider">
+
+      <!-- ⑥ アンケート -->
+      <div class="form-group">
+        <label class="field-label">
+          どちらでお知りになりましたか <span class="optional">任意</span>
+        </label>
+        <div class="radio-group">
+          <label class="radio-item">
+            <input type="radio" name="source" value="メルマガで">
+            <span class="radio-circle"></span>
+            メルマガで
+          </label>
+          <label class="radio-item">
+            <input type="radio" name="source" value="ご紹介で">
+            <span class="radio-circle"></span>
+            ご紹介で
+          </label>
+          <label class="radio-item">
+            <input type="radio" name="source" value="HPで">
+            <span class="radio-circle"></span>
+            HPで
+          </label>
+          <label class="radio-item">
+            <input type="radio" name="source" value="イベントサイトで">
+            <span class="radio-circle"></span>
+            イベントサイトで
+          </label>
+          <label class="radio-item">
+            <input type="radio" name="source" value="青山ブルゴーニュ.shopで">
+            <span class="radio-circle"></span>
+            <span style="font-family: 'EB Garamond', serif; font-style: italic;">aoyama-bourgogne.shop</span> で
+          </label>
+        </div>
+      </div>
+
+      <hr class="section-divider">
+
+      <!-- ⑦ 確認事項 -->
+      <div class="form-group" id="groupConfirm">
+        <label class="field-label">
+          確認事項 <span class="required">必須</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" id="confirm" name="confirm" required>
+          <span class="checkbox-box"></span>
+          <span>本フォームの送信はお申し込みの完了ではなく、2〜3日以内に担当者よりLINEにて決済リンクが届き、決済完了をもってご予約確定となること、および定員に達した場合はお申し込みいただけない場合があることを了承します。</span>
+        </label>
+        <p class="field-error">確認事項に同意してください</p>
+      </div>
+
+      <div class="submit-wrap">
+        <button type="submit" class="submit-btn" id="submitBtn">送信する</button>
+      </div>
+    </form>
+
+    <!-- Completion -->
+    <div class="completion" id="completionMsg">
+      <h2>お申し込みありがとうございます</h2>
+      <div class="divider" style="margin: 24px auto;"></div>
+      <p>
+        ご入力いただいたメールアドレスに確認メールをお送りしました。<br><br>
+        2〜3日以内に担当者より公式LINEにて<br>
+        決済リンクをお送りいたします。<br><br>
+        決済完了をもってご予約確定となります。
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    // Google Apps Script Web App の URL をここに貼り付け
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    const GAS_URL = 'https://script.google.com/macros/s/AKfycbwJVWcPv11FeJg-OPnGfJFlGBbo7M5Y4uSD3aQZdFNumdt-qfPgqaz6XggfjCbqAYBg/exec';
+
+    const form = document.getElementById('applicationForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const overlay = document.getElementById('loadingOverlay');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Reset errors
+      document.querySelectorAll('.form-group').forEach(g => g.classList.remove('has-error'));
+
+      // Validate
+      let valid = true;
+      const memberId = document.getElementById('memberId');
+      const name = document.getElementById('name');
+      const furigana = document.getElementById('furigana');
+      const email = document.getElementById('email');
+      const guests = document.getElementById('guests');
+      const confirm = document.getElementById('confirm');
+
+      if (!memberId.value.trim() || !/^M\d{8}$/i.test(memberId.value.trim())) {
+        document.getElementById('groupMemberId').classList.add('has-error');
+        valid = false;
+      }
+      if (!name.value.trim()) {
+        document.getElementById('groupName').classList.add('has-error');
+        valid = false;
+      }
+      if (!furigana.value.trim()) {
+        document.getElementById('groupFurigana').classList.add('has-error');
+        valid = false;
+      }
+      if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        document.getElementById('groupEmail').classList.add('has-error');
+        valid = false;
+      }
+      if (!guests.value) {
+        document.getElementById('groupGuests').classList.add('has-error');
+        valid = false;
+      }
+      if (!confirm.checked) {
+        document.getElementById('groupConfirm').classList.add('has-error');
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      // Collect data
+      const sourceRadio = document.querySelector('input[name="source"]:checked');
+      const data = {
+        memberId: memberId.value.trim().toUpperCase(),
+        name: name.value.trim(),
+        furigana: furigana.value.trim(),
+        email: email.value.trim(),
+        guests: guests.value,
+        source: sourceRadio ? sourceRadio.value : ''
+      };
+
+      // Submit
+      submitBtn.disabled = true;
+      overlay.classList.add('active');
+
+      try {
+        const params = new URLSearchParams(data).toString();
+        const url = GAS_URL + '?' + params;
+        const res = await fetch(url, { mode: 'no-cors' });
+
+        // no-cors returns opaque response, so we assume success
+        form.style.display = 'none';
+        document.querySelector('.notice').style.display = 'none';
+        document.getElementById('completionMsg').style.display = 'block';
+      } catch (err) {
+        alert('送信中にエラーが発生しました。お手数ですが、もう一度お試しください。');
+        submitBtn.disabled = false;
+      } finally {
+        overlay.classList.remove('active');
+      }
+    });
+  </script>
+
+</body>
+</html>
