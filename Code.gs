@@ -59,7 +59,7 @@ function handleSubmission(raw) {
 }
 
 function sendConfirmationEmail(data) {
-  var subject = '【サロンドヴァンパッシオン】試飲会 お申し込み受付のご確認';
+  var subject = '【サロンドヴァンパッシオン】試飲会 お申込み受付のご確認';
 
   var summary =
     '　会員番号　　：' + data.memberId + '\n' +
@@ -69,11 +69,11 @@ function sendConfirmationEmail(data) {
 
   var body =
     data.name + ' 様\n\n' +
-    'この度はサロンドヴァンパッシオン試飲会にお申し込みいただき、\n' +
+    'この度はサロンドヴァンパッシオン試飲会にお申込みいただき、\n' +
     '誠にありがとうございます。\n\n' +
-    '以下の内容でお申し込みを承りました。\n\n' +
+    '以下の内容でお申込みを承りました。\n\n' +
     '──────────────────────────────\n' +
-    '【お申し込み内容】\n' +
+    '【お申込み内容】\n' +
     summary +
     '──────────────────────────────\n\n' +
     'ご不明な点がございましたら、お気軽に公式LINEまでお問い合わせください。\n\n' +
@@ -87,6 +87,7 @@ function sendConfirmationEmail(data) {
     '──────────────────────────────\n';
 
   GmailApp.sendEmail(data.email, subject, body, {
-    name: '青山ブルゴーニュ.shop'
+    name: '青山ブルゴーニュ.shop',
+    from: 'omakase.aoyama.garden@gmail.com'
   });
 }
